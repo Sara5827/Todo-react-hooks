@@ -15,6 +15,13 @@ function TodoList() {
     console.log(...todos);
     } 
 
+    const removeTodo = id => {
+        const removeArr = [...todos].filter(todo => todo.id !== id)
+
+        setTodos(removeArr);
+
+       };
+
     const completeTodo = id =>{
         let updateTodos = todos.map(todo => {
             if (todo.isComplete = !todo.isComplete)
@@ -29,6 +36,7 @@ function TodoList() {
              <Todo 
                 todos={todos}
                 completeTodo={completeTodo}
+                removeTodo={removeTodo}
              />
         </div>
     )
